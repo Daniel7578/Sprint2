@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="h1">Bienvenido a nuestro portal de historias clinicas</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <h1>Historias Clinicas</h1>
+            <div class="table-height">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="table-info">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre Paciente</th>
+                                <th scope="col">Apellido Paciente</th>
+                                <th scope="col">Activa</th>
+                                <th scope="col">Ultima modificación</th>
+                                <th scope="col">Sintomas</th>
+                                <th scope="col">Medico visitado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for historia in historias_list %}
+                            <tr>
+                                <td><a href="{% url 'historia_detail' pk=historia.pk %}">{{ historia.pk }}</a></td>
+                                <td>{{ historia.paciente.nombre }}</td>
+                                <td>{{ historia.paciente.apellido }}</td>
+                                <td>{{ historia.activa }}</td>
+                                <td>{{ historia.ultimaModificacion}}</td>
+                                <td>{{ historia.sintomas}}</td>
+                                <td>{{ historia.doctores.first}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/historiasClinicas.css' %}">
+
+{% endblock %}

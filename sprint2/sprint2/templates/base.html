@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widmy</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light" id="mainNavbar">
+        <div class="container-fluid">
+            <img src="https://media.discordapp.net/attachments/953846520975867974/1086503435186229379/image.png"
+                alt="logo" id="widmy_logo" />
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'historias_list' %}">Portal historias clinicas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Portal empresas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'historiaClinicas_view' %}">GetALL</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+
+<!-- Footer -->
+<footer style="background-color: #D8D8D8; position: relative; bottom: 0; width: 100%; height: 100px;">
+
+    <div style="padding: 30px">
+        <div style="float: left; width: 400px;">ISIS-2503 Arquitectura y Diseño de Software</div>
+        <div style="float: right; width: 220px;">Universidad de los Andes</div>
+        <br>
+        <div style="float: left; width: 400px;"><i>Ukelele explosivo </i></div>
+    </div>
+    <br>
+
+</footer>
+<!-- Footer -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
+</html>

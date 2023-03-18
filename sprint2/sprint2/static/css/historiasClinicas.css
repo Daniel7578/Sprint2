@@ -1,0 +1,12 @@
+.h1{
+    color: #4334CA;
+}
+.table-height {
+    max-height: 400px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.table {
+    height: auto;
+}

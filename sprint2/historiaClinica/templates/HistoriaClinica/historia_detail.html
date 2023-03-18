@@ -1,0 +1,41 @@
+<!-- historia_detail.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+
+
+        <h1>Historia {{ pk_value }}</h1>
+    </div>
+    <div class="row">
+
+        <table>
+            <tr>
+                <th>Key </th>
+                <th></th>
+                <th>Value</th>
+            </tr>
+            {% for key, value in historia.fields.items %}
+            <tr>
+                <td>{{ key }}</td>
+                <td></td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <pre></pre>
+    <div class="row">
+
+        <h1 class="mb-4">JSON</h1>
+        <pre class="border p-3">{{ historia|safe }}</pre>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

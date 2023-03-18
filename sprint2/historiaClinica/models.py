@@ -10,6 +10,6 @@ class HistoriaClinica(models.Model):
     sintomas = models.TextField(max_length=500)
     fechaCreacion = models.DateTimeField(auto_now_add=True)
     ultimaModificacion = models.DateTimeField(auto_now_add=True)
-
+    
     def __str__(self):
         return '%s' % (self.sintomas)
